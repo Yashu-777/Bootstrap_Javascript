@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Sorting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">String Sorting</div>
+                <div class="card-body">
+                    <div class="mb-3 row">
+                        <label for="inputString" class="col-sm-3 col-form-label">Enter a String:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputString" placeholder="Enter a string">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" onclick="sortString()">Sort</button>
+                    </div>
+                    <div class="mt-3">
+                        <p id="result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function sortString() {
+        const inputString = document.getElementById('inputString').value;
+        const sortedString = inputString.split('').sort().join('');
+        document.getElementById('result').innerHTML = `Sorted String: ${sortedString}`;
+    }
+</script>
+
+</body>
+</html>

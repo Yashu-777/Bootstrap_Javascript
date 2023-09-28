@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-image: linear-gradient(rgba(251, 251, 135, 0.659),rgba(240, 156, 240, 0.856));
+        }
+        label {
+            font-weight: bold;
+        }
+        .poor-feedback {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center text-primary p-4">Registration Form</h2>       
+        <form action="#" method="post">
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-4 col-form-label">First Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    <span id="firstNameFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-4 col-form-label">Last Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    <span id="lastNameFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-4 col-form-label">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <span id="emailFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-sm-4 col-form-label">Password:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <span id="passwordFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="rePassword" class="col-sm-4 col-form-label">Re-enter Password:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="rePassword" name="rePassword" required>
+                    <span id="rePasswordFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4">Gender:</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="Male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="Female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="age" class="col-sm-4 col-form-label">Age:</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="age" name="age" required>
+                    <span id="ageFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phoneNumber" class="col-sm-4 col-form-label">Phone Number:</label>
+                <div class="col-sm-8">
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                    <span id="phoneNumberFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="address" class="col-sm-4 col-form-label">Address:</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                    <span id="addressFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="state" class="col-sm-4 col-form-label">State:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="state" name="state" required>
+                    <span id="stateFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="country" class="col-sm-4 col-form-label">Country:</label>
+                <div class="col-sm-8">
+                    <select class="form-control" id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="USA">India</option>
+                        <option value="Canada">Pakistan</option>
+                        <option value="UK">Sri Lanka</option>
+                    </select>
+                    <span id="countryFeedback" class="poor-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4">Languages known:</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="english" name="languages[]" value="English">
+                        <label class="form-check-label" for="english">English</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="kannada" name="languages[]" value="Kannada">
+                        <label class="form-check-label" for="kannada">Kannada</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="hindi" name="languages[]" value="Hindi">
+                        <label class="form-check-label" for="hindi">Hindi</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="telugu" name="languages[]" value="Telugu">
+                        <label class="form-check-label" for="telugu">Telugu</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="declaration" required>
+                    <label class="form-check-label font-weight-normal" for="declaration">Hereby I declare all the given details are true</label>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <p>Log in to
+                    <a href="https://www.ethnus.com" target="_blank">Ethnus</a> Website
+                </p>
+            </div>           
+        </form>
+        <button type="submit" class="btn btn-danger btn-block">Register</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstNameInput = document.getElementById("firstName");
+            const firstNameFeedback = document.getElementById("firstNameFeedback");
+    
+            firstNameInput.addEventListener("input", function () {
+                const value = firstNameInput.value.trim();
+                if (value.length < 3) {
+                    firstNameFeedback.textContent = "Poor";
+                } else {
+                    firstNameFeedback.textContent = "";
+                }
+            });
+    
+            const lastNameInput = document.getElementById("lastName");
+            const lastNameFeedback = document.getElementById("lastNameFeedback");
+    
+            lastNameInput.addEventListener("input", function () {
+                const value = lastNameInput.value.trim();
+                if (value.length < 1) {
+                    lastNameFeedback.textContent = "Poor";
+                } else {
+                    lastNameFeedback.textContent = "";
+                }
+            });
+    
+            const emailInput = document.getElementById("email");
+            const emailFeedback = document.getElementById("emailFeedback");
+    
+            emailInput.addEventListener("input", function () {
+                const value = emailInput.value.trim();
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                if (!emailRegex.test(value)) {
+                    emailFeedback.textContent = "Poor";
+                } else {
+                    emailFeedback.textContent = "";
+                }
+            });
+    
+            const passwordInput = document.getElementById("password");
+            const passwordFeedback = document.getElementById("passwordFeedback");
+    
+            passwordInput.addEventListener("input", function () {
+                const value = passwordInput.value;
+                if (value.length < 6) {
+                    passwordFeedback.textContent = "Poor";
+                } else {
+                    passwordFeedback.textContent = "";
+                }
+            });
+    
+            const rePasswordInput = document.getElementById("rePassword");
+            const rePasswordFeedback = document.getElementById("rePasswordFeedback");
+    
+            rePasswordInput.addEventListener("input", function () {
+                const passwordValue = passwordInput.value;
+                const rePasswordValue = rePasswordInput.value;
+                if (rePasswordValue !== passwordValue) {
+                    rePasswordFeedback.textContent = "Poor or Mismatch";
+                } else {
+                    rePasswordFeedback.textContent = "";
+                }
+            });
+    
+            const ageInput = document.getElementById("age");
+            const ageFeedback = document.getElementById("ageFeedback");
+    
+            ageInput.addEventListener("input", function () {
+                const value = ageInput.value;
+                if(value<1 || value>120){
+                    ageFeedback.textContent="Invalid";
+                }
+                else if (isNaN(value) || value < 18) {
+                    ageFeedback.textContent = "Poor";
+                } 
+                else {
+                    ageFeedback.textContent = "";
+                }
+            });
+    
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            const phoneNumberFeedback = document.getElementById("phoneNumberFeedback");
+    
+            phoneNumberInput.addEventListener("input", function () {
+                const value = phoneNumberInput.value;
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(value)) {
+                    phoneNumberFeedback.textContent = "Poor";
+                } else {
+                    phoneNumberFeedback.textContent = "";
+                }
+            });
+    
+            const addressInput = document.getElementById("address");
+            const addressFeedback = document.getElementById("addressFeedback");
+    
+            addressInput.addEventListener("input", function () {
+                const value = addressInput.value.trim();
+                if (value.length < 10) {
+                    addressFeedback.textContent = "Poor";
+                } else {
+                    addressFeedback.textContent = "";
+                }
+            });
+    
+            const stateInput = document.getElementById("state");
+            const stateFeedback = document.getElementById("stateFeedback");
+    
+            stateInput.addEventListener("input", function () {
+                const value = stateInput.value.trim();
+                if (value.length < 3) {
+                    stateFeedback.textContent = "Poor";
+                } else {
+                    stateFeedback.textContent = "";
+                }
+            });
+    
+            const countryInput = document.getElementById("country");
+            const countryFeedback = document.getElementById("countryFeedback");
+    
+            countryInput.addEventListener("change", function () {
+                const value = countryInput.value.trim();
+                if (value === "") {
+                    countryFeedback.textContent = "Please select a country";
+                } else {
+                    countryFeedback.textContent = "";
+                }
+            });
+    
+            const declarationCheckbox = document.getElementById("declaration");
+    
+            declarationCheckbox.addEventListener("change", function () {
+                const isChecked = declarationCheckbox.checked;
+                if (!isChecked) {
+                    alert("You must agree to the declaration.");
+                }
+            });
+    
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+        }
+
+        input[type="text"].is-invalid,
+        input[type="email"].is-invalid,
+        input[type="url"].is-invalid,
+        textarea.is-invalid {
+            border: 2px solid red;
+        }
+    </style>
+    <title>Bootstrap Form</title>
+</head>
+<body>
+    <div class="container mt-5 bg-light">
+        <form class="mx-auto w-50 p-5">
+            <div class="mb-3 row">
+                <label for="newName" class="col-sm-3 col-form-label">Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="newName" name="newName">
+                    <p class="error-message" id="newNameError"></p>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="newEmail" class="col-sm-3 col-form-label">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="newEmail" name="newEmail">
+                    <p class="error-message" id="newEmailError"></p>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="newWebsite" class="col-sm-3 col-form-label">Website:</label>
+                <div class="col-sm-9">
+                    <input type="url" class="form-control" id="newWebsite" name="newWebsite">
+                    <p class="error-message" id="newWebsiteError"></p>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="newMessage" class="col-sm-3 col-form-label">Message:</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" id="newMessage" name="newMessage" rows="4"></textarea>
+                    <p class="error-message" id="newMessageError"></p>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="button" class="btn btn-primary" onclick="validateForm()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const newName = document.getElementById("newName").value;
+            const newEmail = document.getElementById("newEmail").value;
+            const newWebsite = document.getElementById("newWebsite").value;
+            const newMessage = document.getElementById("newMessage").value;
+
+            const newNameError = document.getElementById("newNameError");
+            const newEmailError = document.getElementById("newEmailError");
+            const newWebsiteError = document.getElementById("newWebsiteError");
+            const newMessageError = document.getElementById("newMessageError");
+
+            newNameError.textContent = "";
+            newEmailError.textContent = "";
+            newWebsiteError.textContent = "";
+            newMessageError.textContent = "";
+
+            document.getElementById("newName").classList.remove("is-invalid");
+            document.getElementById("newEmail").classList.remove("is-invalid");
+            document.getElementById("newWebsite").classList.remove("is-invalid");
+            document.getElementById("newMessage").classList.remove("is-invalid");
+
+            let isValid = true;
+
+            if (newName.trim() === "") {
+                newNameError.textContent = "This field is required";
+                document.getElementById("newName").classList.add("is-invalid");
+                isValid = false;
+            }
+
+            if (newEmail.trim() === "") {
+                newEmailError.textContent = "A valid email address is required";
+                document.getElementById("newEmail").classList.add("is-invalid");
+                isValid = false;
+            } else if (!isValidEmail(newEmail)) {
+                newEmailError.textContent = "Invalid email address";
+                document.getElementById("newEmail").classList.add("is-invalid");
+                isValid = false;
+            }
+
+            if (newWebsite.trim() === "") {
+                newWebsiteError.textContent = "A valid URL is required";
+                document.getElementById("newWebsite").classList.add("is-invalid");
+                isValid = false;
+            } else if (!isValidUrl(newWebsite)) {
+                newWebsiteError.textContent = "Invalid URL";
+                document.getElementById("newWebsite").classList.add("is-invalid");
+                isValid = false;
+            }
+
+            if (newMessage.trim() === "") {
+                newMessageError.textContent = "This field is required";
+                document.getElementById("newMessage").classList.add("is-invalid");
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form is valid. Submitting...");
+            }
+        }
+
+        function isValidEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function isValidUrl(url) {
+            const urlPattern = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+            return urlPattern.test(url);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
